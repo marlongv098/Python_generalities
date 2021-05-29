@@ -1,0 +1,11 @@
+
+
+def is_divisible_by_three(num):		# this function was made to know when a function is divisibleby 3
+	if num % 3==0:
+		print "is divisible by 3"
+	else:
+		print "is not divisible by three"
+
+cat = input("write the number: ")
+
+is_divisible_by_three(cat)
