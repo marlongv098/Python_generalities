@@ -1,0 +1,108 @@
+
+
+def divisible(n):	# THIS FUNCTION SHOW WHICH ONE OF THE NUMBERS IS PRIME.
+	i=2
+	result=n%i 
+	if result!=0:
+	   print True  
+	else:
+	   print False 
+	i+=1	
+
+
+def is_prime(n):
+	"""
+	>>> is_prime(3)
+	True
+	>>> is_prime(5)
+	True
+	>>> is_prime(4)
+	False
+	"""
+	return divisible(n)
+
+
+def count_num_even_digits(n):	# THIS FUNCTION COUNTS THE EVEN DIGITS IN A NUMBER. NOTHING MORE ELSE.  
+    count = 0
+    while n:
+	digit = n % 10
+        if digit%2==0:
+            count = count + 1
+        n = n / 10
+    print count
+
+
+def num_even_digits(n):
+    """
+      >>> num_even_digits(123456)
+      3
+      >>> num_even_digits(2468)
+      4
+      >>> num_even_digits(1357)
+      0
+      >>> num_even_digits(2)
+      1
+      >>> num_even_digits(20)
+      2
+    """
+    return count_num_even_digits(n)
+
+
+def showdown(number):		# PROGRAM TO PRINT THE DIGITS OF A NUMBER FROM THE LAST ONE TO THE FIRST ONE. 
+	#string=str(n)		
+	#for i in string:
+	# print i 		# THIS CHUNK OF PROGRAM SHOW ME ORDER DIGITS. THE NUMBER WAS CONVERTED IN A STRING THAT WAS THE IDEA.
+
+	while number:
+    	  digit = number % 10
+          print digit, # do whatever with digit
+          number /= 10
+
+
+def print_digits(n):
+    """
+      >>> print_digits(13789)
+      9 8 7 3 1
+      >>> print_digits(39874613)
+      3 1 6 4 7 8 9 3
+      >>> print_digits(213141)
+      1 4 1 3 1 2
+    """
+    return showdown(n)
+
+
+def sum_square(n):	# THIS FUNCTION PRINT THE SQUARE SUM OF THE DIGITS OF A NUMBER.
+	count=0
+	for i in str(n):
+	  count = count + (int(i))**2 
+	print count
+
+	#while n:		# I WANT DO THE SAME WITH THIS BUT I DID NOT FINISHED. I NEED FIND A SOLUTIO LATER.  
+	#  digit=n%10
+	#  square = digit**2
+	  #while digit:
+	  #   numb=digit**2
+	#  count = count + square 
+	#  print count	  
+	#  n/=10
+
+
+
+def sum_of_squares_of_digits(n):
+    """
+      >>> sum_of_squares_of_digits(1)
+      1
+      >>> sum_of_squares_of_digits(9)
+      81
+      >>> sum_of_squares_of_digits(11)
+      2
+      >>> sum_of_squares_of_digits(121)
+      6
+      >>> sum_of_squares_of_digits(987)
+      194
+    """
+    return sum_square(n)
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
