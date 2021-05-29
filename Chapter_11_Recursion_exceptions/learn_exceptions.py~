@@ -1,0 +1,21 @@
+# learn_exceptions.py
+# WE CAN MAKE A LOT OF EXCEPTIONS DEPEND ON OURS IDEAS.
+
+
+def exists(filename):			# THIS IS AN EXCEPTION FUNCTION TO BE USED TO LOAD A FILE. IS THE FILE EXIST IN THE FOLDER THEN LOAD AND RETURN TRUE. IF THE FILE DOES NOT EXIST INSIDE THE FOLDER THEN THE FUNCTION RETURN FALSE.
+    try:		
+        f = open(filename)		
+        f.close()			# THE 'try' AND 'except' STATEMENTS ARE USED TO HANDLE THE EXCEPTION. THEY WORKS LIKE THE if, else STATEMENT
+        return True
+    except:
+        return False
+
+
+
+def get_age():					# THIS EXCEPTION WAS MADE TO CONSIDERER '0' LOWER VALUES. IF THE AGE VARIABLE IS LOWER THAN ZERO THEN THE PROGRAM RAISE THE EXPRESION 'ValueError'
+    age = input('Please enter your age: ')
+    if age < 0:
+        raise ValueError, '%s is not a valid age' % age		# THE raise STATEMENT TAKE TWO ARGUMENTS. THE EXCEPTION TYPE AND SPECIFIC INFORMATION ABOUT THE ERROR. THE ValueError IS THE BULIT-IN WHICH MOST CLOSELY MATCHES THE KIND OF ERROR WE WANT TO RAISE..
+    return age
+
+

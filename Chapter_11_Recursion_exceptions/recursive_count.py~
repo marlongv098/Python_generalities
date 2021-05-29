@@ -1,0 +1,97 @@
+import string
+
+def recursive_min(nested_num_list):			# IN THIS EXERCISE ONLY WE CONSIDER LIST TO MADE THE DOCTEST. BUT LIKE MOST OF PROGRAM WE CAN ADD SOME LINES TO PASS THE TUPLE DOCTEST. AN EXAMPLE OF THIS IS IN THE recursive_max FUNCTION INSIDE THE recursion.py FILE.
+    """
+      >>> recursive_min([2, 9, [1, 13], 8, 6])
+      1
+      >>> recursive_min([2, [[100, 1], 90], [10, 13], 8, 6])
+      1
+      >>> recursive_min([2, [[13, -7], 90], [1, 100], 8, 6])
+      -7
+      >>> recursive_min([[[-13, 7], 90], 2, [1, 100], 8, 6])
+      -13
+    """
+    lower = nested_num_list[0]					# LINE THE FIND FIX THE FIRST LIST OR TUPLE ELEMENT
+    while type(lower) == type([]) or type(lower) == type(()):	# IF THE FIRST ELEMENT IS A LIST OR TUPLE THIS LINE FIX THE FIRST ELEMENT OF THAT LIST OR TUPLE.
+        lower = lower[0]				# TO FIX THIS LINE ASSIGN THE FIRST ELEMENT OF THE LOWER ONLY IF IS A LIST OR TUPLE.
+
+    for element in nested_num_list:			# THIS PASS TROUGH EVERY ELEMENT OF THE NESTED LIST OR TUPLE
+        if type(element) == type([]):			# LINE TO EVALUATE THE LIST TYPE. 
+            min_of_elem = recursive_min(element)	# FIX THE ELEMENT IN A RECURSIVE WAY 
+            if lower > min_of_elem:			# COMPARE THE FIXED LOWER WITH THE ELEMENTS OF THE LIST 
+                lower = min_of_elem			# ASSING NEW VALUE TO THE LOWER.
+        else:                           		# element is not a list 
+            if lower > element:				# THIS CHUNK OF CODE WORK IN ELEMENT THAT THEY ARE NOT A LIST OR TUPLE
+                lower = element			
+
+    return lower
+
+
+def recursive_count(target, nested_num_list):
+    """
+      >>> recursive_count(2, [2, 9, [2, 1, 13, 2], 8, [2, 6]])
+      4
+      >>> recursive_count(7, [[9, [7, 1, 13, 2], 8], [7, 6]])
+      2
+      >>> recursive_count(15, [[9, [7, 1, 13, 2], 8], [2, 6]])
+      0
+      >>> recursive_count(5, [[5, [5, [1, 5], 5], 5], [5, 6]])
+      6
+    """
+    count=0						# MEMORY TO STORE THE COUNT
+#    for element in nested_num_list:			
+#	if type(element)==type([]):			# EVALUATE THE TYPE OF ELEMENT
+#	   count += recursive_count(target,element)	# USE RECURSION TO COUNT NESTED LIST ELEMENTS
+#	else:
+#	   if element==target:			# THIS IS THE CHUNK OF CODE TO THE ELEMENT COUNT. AT THE END ALL THE LIST TROUGH THIS CHUNL OF CODE
+#		count += 1	
+#    return count
+
+
+    for i in range(len(nested_num_list)):		# THIS CHUNK ALSO WORKS WELL. 
+	if type(nested_num_list[i])==type([]):
+	    count += recursive_count(target,nested_num_list[i])		# THE PROBLEM HERE WAS ASSIGN THE COUNT. I DID NOT DO IT. count += recursixxxx
+	else:
+            if nested_num_list[i]==target:    			# HERE THE PROBLEM WAS CONSIDER THE COUNTER i IT WAS NOT NECCESARY ONLY 
+	     count += 1
+    return count
+
+							# MAKE SPACE TO STORE THE COUNT
+    #for element in nested_num_list:
+	#if type(element)==type([]):
+	#	recursive_count(target,element)
+	#for i in range(len(element)):
+	#  if element[i]==target:				# CONDITION
+	 #   count += 1 						# COUNT THE ELEMENTS
+       # return count
+
+
+def flatten(nested_num_list):
+    """
+      >>> flatten([2, 9, [2, 1, 13, 2], 8, [2, 6]])
+      [2, 9, 2, 1, 13, 2, 8, 2, 6]
+      >>> flatten([[9, [7, 1, 13, 2], 8], [7, 6]])
+      [9, 7, 1, 13, 2, 8, 7, 6]
+      >>> flatten([[9, [7, 1, 13, 2], 8], [2, 6]])
+      [9, 7, 1, 13, 2, 8, 2, 6]
+      >>> flatten([[5, [5, [1, 5], 5], 5], [5, 6]])
+      [5, 5, 1, 5, 5, 5, 5, 6]
+    """
+    flatten_list=[]				# SPACE TO STORE THE NEW LIST
+        
+    for element in nested_num_list:
+	if type(element)==type([]):
+	    flatten_list = flatten_list + flatten(element)		# RECURSION TO ADD ELEMENTS TO THE NEW LIST.
+	else:
+	  if type(element)==int:
+     	    flatten_list.append(element)				# LIKE EVERY TIME EVERY PROGRAM PASS TROUGH THIS CHUNK OF CODE. I WOULD LIKE REMARK HERE WE CAN NOT USE THE ANOTHER FORM TO ADD ELEMENTS TO THE NEW LIST. DUE THEY ARE INTEGERS NOT LISTS. FOR LIST WE BE ABLE TO USE THE SAME IDEA USED ABOVE flatten_list = flatten_list + element. 
+    return flatten_list		
+
+
+
+
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()       

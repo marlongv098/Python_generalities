@@ -1,0 +1,5 @@
+In this folder we worked with list, tuples, and string. Those kind of elements are sequences types which use integers as indices to access the values they contain within them.
+
+In each of the chapter above all the exercises which we worked were related to those kind of elements. The next chapter it is going to introduce another type of element to work with. It is called dictionaries.
+
+
