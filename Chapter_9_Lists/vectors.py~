@@ -1,0 +1,32 @@
+def vectors(u,v):		# IT WORKS WELL 
+  for i in range(len(u)):
+    u[i]+=v[i]
+  return u
+
+
+def add_vectors(u, v):		# THIS FUNCTION WAS MADE USING TWO DIFFERENT WAYS. THE FIRST ONE USE ANOTHER FUNCTION AND THE SECOND ONE USE THE SAME FUNCTION DEFINED ABOVE, INSIDE "add_vectors" FUNCTION TO CALCULATE THE SUM. THE FUNCION WORKS WELL I KNOW THIS DUE I IMPORT THE FUNCTION AS A PYHTON MODULE, THE PROBLEM IS THAT THE DOC-TEST DOES NOT WORK. I DO NOT KNOW WHY THIS IS HAPPENIG.
+    """
+      >>> add_vectors([1, 0], [1, 1])
+      [2, 1]
+      >>> add_vectors([1, 2], [1, 4])
+      [2, 6]
+      >>> add_vectors([1, 2, 1], [1, 4, 3])
+      [2, 6, 4]
+      >>> add_vectors([11, 0, -4, 5], [2, -4, 17, 0])
+      [13, -4, 13, 5]
+    """
+    #return vectors(u,v)    
+
+
+    for i in range(len(u)):	# IT WORKS WELL.
+      u[i] += v[i]
+    return u
+
+    #c=[]
+    
+    #  c[i] = u[i]+v[i]
+    #return c
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod

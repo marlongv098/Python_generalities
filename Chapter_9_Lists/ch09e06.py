@@ -1,0 +1,49 @@
+
+
+def exercise06():
+  """
+  >>> junk=[3,7,9,10,13,17,21,24,27]
+  >>> 13 in junk
+  True
+  >>> del junk[4]
+  >>> junk
+  [3, 7, 9, 10, 17, 21, 24, 27]
+  >>> del junk[2:7]
+  >>> junk
+  [3, 7, 27]
+
+
+  >>> nlist =[[0,0,17],[0,5],[0,0]]
+  >>> nlist[2][1]
+  0
+  >>> nlist[0][2]
+  17
+  >>> nlist[1][1]
+  5
+
+
+  >>> import string
+  >>> string.split('this and that', ' ')
+  ['this', 'and', 'that']
+
+  """
+
+
+  junk=[3,7,9,10,13,17,21,24,27]
+  13 in junk
+  del junk[4]
+  junk
+  del junk[2:7]
+  junk
+
+  nlist =[[0,0,17],[0,5],[0,0]]
+  nlist[2][1]
+  nlist[0][2]
+  nlist[1][1]
+
+  import string
+  string.split('this and that', ' ')
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()

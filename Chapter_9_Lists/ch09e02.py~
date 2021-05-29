@@ -1,0 +1,73 @@
+#  Add your doctests here:
+
+#
+
+def lists():
+  """
+  >>> a_list=['a', 'b', 'c', 42, 'd', 'e', 'Ni!', 'f']
+  >>> a_list[3]
+  42
+  >>> a_list[6]
+  'Ni!'
+  >>> len(a_list)
+  8
+    
+  >>> b_list=['a','Stills','Nash']
+  >>> c_list=['Young']
+  >>> b_list[1:]
+  ['Stills', 'Nash']
+  >>> group = b_list + c_list
+  >>> group[-1]
+  'Young'
+
+  >>> mystery_list=['equality','peace','justice']
+  >>> 'war' in mystery_list
+  False
+  >>> 'peace' in mystery_list
+  True
+  >>> 'justice' in mystery_list
+  True
+  >>> 'oppression' in mystery_list
+  False
+  >>> 'equality' in mystery_list
+  True
+
+  >>> range(5, 18, 4)
+  [5, 9, 13, 17]
+  
+  """
+
+# Write your Python code here:
+
+  a_list=['a', 'b', 'c', 42, 'd', 'e', 'Ni!', 'f']
+  a_list[3]
+  a_list[6]
+  len(a_list)
+  
+  b_list=['a','Stills','Nash']
+  c_list=['Young']
+  b_list[1:]
+  group = b_list + c_list
+  group[-1]
+
+  mystery_list=['war','peace','justice']
+  'war' in mystery_list
+  'peace' in mystery_list
+  'justice' in mystery_list
+  'oppression' in mystery_list
+  'equality' in mystery_list
+
+  range(5, 18, 4)
+
+  junk=[3,7,9,10,13,17,21,24,27]
+  13 in junk
+  del junk[4]
+  junk
+  del junk[2:7]
+  junk
+
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
