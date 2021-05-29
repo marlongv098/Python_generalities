@@ -1,0 +1,95 @@
+
+
+def string_unit(n,i):		# THIS FUNCTION PRINT ONLY ONE POSITION OF ONE STRING.
+	phrase= str(n)
+	if i < len(phrase):
+	  print phrase[i]
+	else:
+	  print "The position is greater than len of the string "
+
+#cat= raw_input("write the string ")
+#bet= input("write the number of the position ")
+#string_unit(cat,bet)
+
+
+def string_everything(n):
+	index = 0
+	fruit =str(n)
+	while index < len(fruit):
+	    letter = fruit[index]
+	    print letter, 
+	    index += 1
+
+#cat= raw_input("write the string ")
+#string_everything(cat)
+
+
+def string_dif(n):
+	for char in str(n):
+	  print char,  
+
+#cat= raw_input("write the string ")
+#string_dif(cat)
+
+def prefix_fun():	# THIS FUNCTION WAS MADE TO CREATE WORDS WITH THE PREFIXES AND SUFFIX. IT HAS AN ERROR BUT I WILL CORRECT IN THE ch07.py FILE
+	prefixes="JKLMOPQ"	 
+	suffix="ack"
+	for n in prefixes:
+	  print n + suffix
+
+prefix_fun()		# THIS FUNCTION DOES NOT NEED ARGUMENTS. 
+
+
+def string_counter(n,i,j): 			# WE CAN ALSO USE THE BRACKETS TO COUNT FROM A PLACE Of THE STRING TO ANOTHER.
+	l=str(n)
+	#for l in str(n):
+	  #if i<len(n) and j<len(n) and i<=j:
+	print l[i:j],	 
+
+#cat = raw_input("write the string: ")
+#bet =input("write the begin of the new string ")
+#cet =input("write the end of the new string ")
+#string_counter(cat, bet, cet)
+
+
+def word_comparition(n):	# FUNCTION TO WRITE AND COMPARE A STRING AND GET A RESULT.
+	if n=="bananas":
+	  print "we have got bananas"
+	else:	
+	  print "we do not have that thing"
+
+#cat=raw_input("what do you want?: ")
+#word_comparition(cat)
+
+
+def counting_looping_string(n,l):  # THIS FUNCTION WAS MADE TO COUNT THE AMOUNT OS SAME ELEMENTS IN A STRING. THE CHOSEN ONE ELEMENT IS AN ARGUMENT.
+	count = 0
+	for char in str(n):
+	    if char == l:
+	        count += 1
+	print count
+
+#cat=raw_input("what do you want?: ")
+#bet=raw_input("which letter would you like count ")
+#counting_looping_string(cat, bet)
+
+
+def string_formating():      # THIS FUNCTION PRINT A TABLE. THE FIRST LINE PRINT THE HEADER ON THE TABLE AND THE LOOP PRINT THE ELEMENTS OF THE TABLE. 
+	i = 1
+	print "%-4s%-5s%-6s%-8s%-13s%-15s" % \
+	      ('i', 'i**2', 'i**3', 'i**5', 'i**10', 'i**20')
+	while i <= 10:					# I COULD MODIFY THE PROGRAM TO REQUEST SOME ARGUMENTS LIKE THE NUMBER OF ELEMENTS IN THE LOOP.
+	    print "%-4d%-5d%-6d%-8d%-13d%-15d" % (i, i**2, i**3, i**5, i**10, i**20)
+	    i += 1
+
+#string_formating()
+
+def remove_vowels(letter,strng):
+    vowels = str(strng) #"aeiouAEIOU"
+    s_without_vowels = ""
+    for letter in vowels:
+        if letter not in vowels:
+            s_without_vowels += letter
+    return s_without_vowels
+
+

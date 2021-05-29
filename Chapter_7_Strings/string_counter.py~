@@ -1,0 +1,27 @@
+
+
+def string_counter(n,i,j): 			# WE CAN ALSO USE THE BRACKETS TO COUNT FROM A PLACE Of THE STRING TO ANOTHER.
+	for legth in n:
+	  #if i<len(n) and j<len(n) and i<=j:
+	     print legth[i:j]	 
+
+#cat = raw_input("write the string ")
+#bet =input("write the begin of the new string ")
+#cet =input("write the end of the new string ")
+#string_counter(cat, bet, cet)
+
+def print_strings(n):
+    """
+      >>> print_strings("isjfnisuhfia",3,7)
+      fnisu
+      >>> print_strings("idgidhfgiudfg",5,9)
+      hfgiu
+      >>> print_strings("jkdngidhiuvgdsiuf",1,10)
+      kdngidhiuv
+    """
+    return string_counter(n,i,j)
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
+
