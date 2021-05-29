@@ -1,0 +1,19 @@
+from test1 import coord  #this was made to know how import function un python
+
+def print_twice(param, par): #function defined such a foundation 
+    print param, param
+    print param
+    print par
+
+def cat_twice(part1, part2, part3): #function conceived to work with Print_twice
+    cat = part1 + part2
+    print_twice(cat,part3)
+    	
+chant1 = "Pie Jesu domine, "
+chant2 = "Dona eis requim."
+chant3 = "This is a prove. "
+cat_twice(chant1, chant2, chant3) #proving all definitions
+
+x=3
+y=4
+coord(x,y) #this funtion was defined in test1.py

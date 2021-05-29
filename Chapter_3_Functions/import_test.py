@@ -1,0 +1,12 @@
+from twenty_lines import *
+
+def cat_n_times(s, n):
+	for i in range(n):
+		print s
+
+def cat_times(s,n):
+	print s*n
+
+cat_times("spam",7)
+#new_line()
+cat_n_times("spam",7)
